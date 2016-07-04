@@ -3,14 +3,23 @@ title: GSMtasks documentation - API reference
 
 language_tabs:
   - http
-  - php
-  - python
+  # - php
+  # - python
 
 toc_footers:
   - <a href='https://gsmtasks.com/users/signup/'>Sign Up for a Developer Key</a>
 
 includes:
-  - resources
+  - accounts
+  - accountroles
+  - users
+  - orders
+  - tasks
+  - taskevents
+  - contactaddresses
+  - fileuploads
+  - documents
+  - signatures
 
 search: true
 ---
@@ -29,20 +38,7 @@ If you have questions about using the API, or have come across a bug you'd like 
 
 For clients to authenticate, the token key should be included in the Authorization HTTP header.
 
-```http
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b')
-```
-
-```python
-import kittn
-
-api = kittn.authorize('9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b')
-```
-
-```php
-# With shell, you can just pass the correct header with each request
+```curl
 curl "api_endpoint_here"
   -H "Authorization: 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b"
 ```
