@@ -12,7 +12,7 @@ Returns a array of orders that the user has access to.
 [
   {
     "id": "4336f911-32ec-4fb4-b17a-e58aef3943e6",
-    "url": "https://gsmtasks.com/api/tasks/task_groups/4336f911-32ec-4fb4-b17a-e58aef3943e6/",
+    "url": "https://gsmtasks.com/api/tasks/orders/4336f911-32ec-4fb4-b17a-e58aef3943e6/",
     "account": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/",
     "tasks": [
       "https://gsmtasks.com/api/tasks/tasks/353ce213-c649-4e4b-bbcf-a493433cee9c/"
@@ -55,12 +55,12 @@ You can read more about creating tasks [here](#).
 }
 ```
 
-> The request returns JSON of the created account structured like this:
+> The request returns JSON of the created Order structured like this:
 
 ```json
 {
   "id": "4336f911-32ec-4fb4-b17a-e58aef3943e6",
-  "url": "https://gsmtasks.com/api/tasks/task_groups/4336f911-32ec-4fb4-b17a-e58aef3943e6/",
+  "url": "https://gsmtasks.com/api/tasks/orders/4336f911-32ec-4fb4-b17a-e58aef3943e6/",
   "account": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/",
   "tasks": [
     "https://gsmtasks.com/api/tasks/tasks/353ce213-c649-4e4b-bbcf-a493433cee9c/"
@@ -99,7 +99,7 @@ You can not remove the tasks from the order that have already been completed or 
 }
 ```
 
-> The request returns JSON of the created account structured like this:
+> The request returns JSON of the updated Order structured like this:
 
 ```json
 {

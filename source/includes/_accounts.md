@@ -60,7 +60,7 @@ Request to create a new account with the parameters provided
 }
 ```
 
-> The request returns JSON of the created account structured like this:
+> The request returns JSON of the created Account structured like this:
 
 ```json
 {

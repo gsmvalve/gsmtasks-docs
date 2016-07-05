@@ -1,82 +1,97 @@
 # Signatures
 
-This is an object representing your GSMtasks account and it's settings. On signup an account is created for the user. It's also possible to have access to other accounts through Role objects.
+Signatures attach File Upload objects to a task and are meant to separate leagal signatures from documents.
 
 <aside class="notice">
-Account objects also expose workers and managers endpoints for easy access.
+The File Upload object has to be created before creating the Signature object.
 </aside>
 
-## List Accounts
+## List Signatures
 
-Returns a array of accounts that the user has access to.
+Returns a array of signatures that the user has access to.
 
 > The request returns JSON structured like this:
 
 ```json
 [
   {
-    "id": "4368ec5d-9942-4c74-90f7-eea752a6e489",
-    "url": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/",
-    "name": "Fast Couriers",
-    "slug": "fast-couriers",
-    "timezone": "Europe/London",
-    "country_code": "GB",
-    "managers": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/managers/",
-    "workers": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/workers/"
+    "id": "c6a66d6d-76e0-4c7e-a22c-02eff4d68b59",
+    "url": "https://gsmtasks.com/api/tasks/documents/c6a66d6d-76e0-4c7e-a22c-02eff4d68b591/",
+    "task": "https://gsmtasks.com/api/tasks/tasks/d09b5fc0-d82f-42ed-9d5f-022d68f36df6/",
+    "file": "https://gsmtasks.com/media/fileupload/874965eb-1de6-442a-92f0-2cadbed45716/attachment.xlsx",
+    "size": 8550,
+    "signer": {
+      "name": "Tom ",
+      "company": "Smith",
+      "phone": "+447700900132",
+      "email": "tom.smith@fast.uk",
+      "notes": "All good"
+    },
+    "created_by": "https://gsmtasks.com/api/tasks/users/12d2821e-01e2-48fb-97bc-eaebca93cbdc/"
   }
 ]
 ```
 
-`GET https://gsmtasks.com/api/tasks/accounts/`
+`GET https://gsmtasks.com/api/tasks/signatures/`
 
 ### Attributes
 
-Attribute     | Type   | Required | Description
-------------  | ------ | -------  | -----------
-id            | String | -        | Account unique identifier
-url           | String | -        | Unique URL for the resource
-name          | String | Yes      | Name of the account for easy reference
-slug          | String | -        | Human readable account identifier
-timezone      | String | -        | [Timezone name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for dates and time
-country_code  | String | No       | ISO 2 [country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
-managers      | String | -        | URL for easy access to account managers
-workers       | String | -        | URL for easy access to account workers
+Attribute         | Type    | Description
+----------------- | ------- | -----------
+id                | String  | Signature unique identifier
+url               | String  | Unique URL for the resource
+task              | String  | URL of the task resource
+file              | String  | URL of the file for downloading
+size              | Number  | Size of the file in bytes
+signer            | Object  | Signer object of the signature
+created_by        | String  | URL of the user who created the signature
 
-## Create account
+## Create Signature
 
-Request to create a new account with the parameters provided
+Request to create a new document with the parameters provided
 
 > Example POST request JSON data:
 
 ```json
 {
-  "name": "Fast Couriers",
-  "timezone": "Europe/London",
-  "country_code": "GB"
+  "task": "https://gsmtasks.com/api/tasks/tasks/d09b5fc0-d82f-42ed-9d5f-022d68f36df6/",
+  "file_upload": "https://gsmtasks.com/api/tasks/file_uploads/874965eb-1de6-442a-92f0-2cadbed45716/",
+  "contact": {
+    "name": "Tom ",
+    "company": "Smith",
+    "phone": "+447700900132",
+    "email": "tom.smith@fast.uk",
+    "notes": "Call 5 minutes before"
+  }
 }
 ```
 
-> The request returns JSON of the created account structured like this:
+> The request returns JSON of the created Signature structured like this:
 
 ```json
 {
-  "id": "4368ec5d-9942-4c74-90f7-eea752a6e489",
-  "url": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/",
-  "name": "Fast Couriers",
-  "slug": "fast-couriers",
-  "timezone": "Europe/London",
-  "country_code": "GB",
-  "managers": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/managers/",
-  "workers": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/workers/"
+  "id": "c6a66d6d-76e0-4c7e-a22c-02eff4d68b59",
+  "url": "https://gsmtasks.com/api/tasks/documents/c6a66d6d-76e0-4c7e-a22c-02eff4d68b591/",
+  "task": "https://gsmtasks.com/api/tasks/tasks/d09b5fc0-d82f-42ed-9d5f-022d68f36df6/",
+  "file": "https://gsmtasks.com/media/fileupload/874965eb-1de6-442a-92f0-2cadbed45716/attachment.xlsx",
+  "size": 8550,
+  "signer": {
+    "name": "Tom ",
+    "company": "Smith",
+    "phone": "+447700900132",
+    "email": "tom.smith@fast.uk",
+    "notes": "All good"
+  },
+  "created_by": "https://gsmtasks.com/api/tasks/users/12d2821e-01e2-48fb-97bc-eaebca93cbdc/"
 }
 ```
 
-`POST https://gsmtasks.com/api/tasks/accounts/`
+`POST https://gsmtasks.com/api/tasks/signatures/`
 
 ### Request parameters
 
-Parameter     | Type   | Required | Description
-------------  | ------ | -------  | -----------
-name          | String | Yes      | Name of the account for easy reference
-timezone      | String | -        | [Timezone name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for dates and time
-country_code  | String | No       | ISO 2 [country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+Attribute         | Required | Type    | Description
+----------------- | -------- | ------- | -----------
+task              | Yes      | String  | URL of the task resource
+file_upload       | Yes      | String  | URL of the file upload object
+signer            | Yes      | Oject   | Signer object

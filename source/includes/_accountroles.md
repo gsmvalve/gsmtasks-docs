@@ -34,7 +34,7 @@ user          | String  | Yes      | URL of the user resource
 is_manager    | Boolean | -        | Manager access boolean
 is_worker     | Boolean | -        | Worker access boolean
 
-## Retrieve a specific Account
+## Retrieve a specific Account Role
 
 `GET https://gsmtasks.com/api/tasks/roles/dae7ab83-d6d9-4d83-acdf-e39890a8abe2/`
 
@@ -53,7 +53,7 @@ Request to create a new account role with the parameters provided
 }
 ```
 
-> The request returns JSON of the created account structured like this:
+> The request returns JSON of the created Account Role structured like this:
 
 ```json
 {

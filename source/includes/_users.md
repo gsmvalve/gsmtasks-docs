@@ -52,7 +52,7 @@ Request to create a new user with the parameters provided
 }
 ```
 
-> The request returns JSON of the created account structured like this:
+> The request returns JSON of the created User structured like this:
 
 ```json
 {

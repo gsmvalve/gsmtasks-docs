@@ -158,7 +158,7 @@ Request to create a new task with the parameters provided
 }
 ```
 
-> The request returns JSON of the created account structured like this:
+> The request returns JSON of the created Task structured like this:
 
 ```json
 {

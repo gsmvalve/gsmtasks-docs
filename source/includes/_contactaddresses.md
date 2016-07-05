@@ -88,7 +88,7 @@ Request to create a new Contact Address with the parameters provided
 }
 ```
 
-> The request returns JSON of the created account structured like this:
+> The request returns JSON of the created Contact Address structured like this:
 
 ```json
 {

@@ -1,82 +1,94 @@
 # Documents
 
-This is an object representing your GSMtasks account and it's settings. On signup an account is created for the user. It's also possible to have access to other accounts through Role objects.
+Documents attach File Upload objects to a task.
 
 <aside class="notice">
-Account objects also expose workers and managers endpoints for easy access.
+The File Upload object has to be created before creating the Document object.
 </aside>
 
-## List Accounts
+## List Document
 
-Returns a array of accounts that the user has access to.
+Returns a array of documents that the user has access to.
 
 > The request returns JSON structured like this:
 
 ```json
 [
   {
-    "id": "4368ec5d-9942-4c74-90f7-eea752a6e489",
-    "url": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/",
-    "name": "Fast Couriers",
-    "slug": "fast-couriers",
-    "timezone": "Europe/London",
-    "country_code": "GB",
-    "managers": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/managers/",
-    "workers": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/workers/"
+    "id": "c6a66d6d-76e0-4c7e-a22c-02eff4d68b59",
+    "url": "https://gsmtasks.com/api/tasks/documents/c6a66d6d-76e0-4c7e-a22c-02eff4d68b591/",
+    "task": "https://gsmtasks.com/api/tasks/tasks/d09b5fc0-d82f-42ed-9d5f-022d68f36df6/",
+    "order": null,
+    "file": "https://gsmtasks.com/media/fileupload/874965eb-1de6-442a-92f0-2cadbed45716/attachment.xlsx",
+    "size": 8550,
+    "description": "Attached Excel spreadsheet",
+    "created_by": "https://gsmtasks.com/api/tasks/users/12d2821e-01e2-48fb-97bc-eaebca93cbdc/",
+    "visible_to_worker": true,
+    "visible_to_client": true
   }
 ]
 ```
 
-`GET https://gsmtasks.com/api/tasks/accounts/`
+`GET https://gsmtasks.com/api/tasks/documents/`
 
 ### Attributes
 
-Attribute     | Type   | Required | Description
-------------  | ------ | -------  | -----------
-id            | String | -        | Account unique identifier
-url           | String | -        | Unique URL for the resource
-name          | String | Yes      | Name of the account for easy reference
-slug          | String | -        | Human readable account identifier
-timezone      | String | -        | [Timezone name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for dates and time
-country_code  | String | No       | ISO 2 [country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
-managers      | String | -        | URL for easy access to account managers
-workers       | String | -        | URL for easy access to account workers
+Attribute         | Type    | Description
+----------------- | ------- | -----------
+id                | String  | Document unique identifier
+url               | String  | Unique URL for the resource
+task              | String  | URL of the task resource
+order             | String  | URL of the order resource
+file              | String  | URL of the file for downloading
+size              | Number  | Size of the file uploaded in bytes
+description       | String  | Description of the file attached
+created_by        | String  | URL of the user who created the upload
+visible_to_worker | Boolean | Defines if the document is visible for worker
+visible_to_client | Boolean | Defines if the document is visible to orderer / client
 
-## Create account
+## Create Document
 
-Request to create a new account with the parameters provided
+Request to create a new document with the parameters provided
 
 > Example POST request JSON data:
 
 ```json
 {
-  "name": "Fast Couriers",
-  "timezone": "Europe/London",
-  "country_code": "GB"
+  "task": "https://gsmtasks.com/api/tasks/tasks/d09b5fc0-d82f-42ed-9d5f-022d68f36df6/",
+  "order": "https://gsmtasks.com/api/tasks/orders/4336f911-32ec-4fb4-b17a-e58aef3943e6/",
+  "file_upload": "https://gsmtasks.com/api/tasks/file_uploads/874965eb-1de6-442a-92f0-2cadbed45716/",
+  "description": "Attached Excel spreadsheet",
+  "visible_to_worker": true,
+  "visible_to_client": true
 }
 ```
 
-> The request returns JSON of the created account structured like this:
+> The request returns JSON of the created Document structured like this:
 
 ```json
 {
-  "id": "4368ec5d-9942-4c74-90f7-eea752a6e489",
-  "url": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/",
-  "name": "Fast Couriers",
-  "slug": "fast-couriers",
-  "timezone": "Europe/London",
-  "country_code": "GB",
-  "managers": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/managers/",
-  "workers": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/workers/"
+  "id": "c6a66d6d-76e0-4c7e-a22c-02eff4d68b59",
+  "url": "https://gsmtasks.com/api/tasks/documents/c6a66d6d-76e0-4c7e-a22c-02eff4d68b591/",
+  "task": "https://gsmtasks.com/api/tasks/tasks/d09b5fc0-d82f-42ed-9d5f-022d68f36df6/",
+  "order": null,
+  "file": "https://gsmtasks.com/media/fileupload/874965eb-1de6-442a-92f0-2cadbed45716/attachment.xlsx",
+  "size": 8550,
+  "description": "Attached Excel spreadsheet",
+  "created_by": "https://gsmtasks.com/api/tasks/users/12d2821e-01e2-48fb-97bc-eaebca93cbdc/",
+  "visible_to_worker": true,
+  "visible_to_client": true
 }
 ```
 
-`POST https://gsmtasks.com/api/tasks/accounts/`
+`POST https://gsmtasks.com/api/tasks/documents/`
 
 ### Request parameters
 
-Parameter     | Type   | Required | Description
-------------  | ------ | -------  | -----------
-name          | String | Yes      | Name of the account for easy reference
-timezone      | String | -        | [Timezone name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for dates and time
-country_code  | String | No       | ISO 2 [country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+Attribute         | Required | Type    | Description
+----------------- | -------- | ------- | -----------
+task              | Yes      | String  | URL of the task resource
+order             | Yes      | String  | URL of the order resource
+file_upload       | Yes      | String  | URL of the file upload object
+description       | No       | String  | Description of the file attached
+visible_to_worker | Yes      | Boolean | Defines if the document is visible for worker
+visible_to_client | Yes      | Boolean | Defines if the document is visible to orderer / client

@@ -52,7 +52,7 @@ Request to create a new file with the parameters provided and the base64 encoded
 }
 ```
 
-> The request returns JSON of the created account structured like this:
+> The request returns JSON of the created File Upload structured like this:
 
 ```json
 {
