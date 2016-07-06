@@ -17,11 +17,16 @@ You can now see the docs at http://localhost:4567.
 ### Building the documentation
 
 ```shell
-bundle install
-bundle exec middleman server
+bundle exec middleman build --clean
 ```
 
+After that the compiled documentation will be in the build folder.
+
+### GSMtasks
+
 You can read more about [GSMtasks here](https://gsmtasks.com).
+
+### Need help?
 
 Need Help? Found a bug or missing documentation?
 --------------------
