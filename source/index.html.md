@@ -38,11 +38,6 @@ If you have questions about using the API, or have come across a bug you'd like 
 
 For clients to authenticate, the token key should be included in the Authorization HTTP header.
 
-```curl
-curl "api_endpoint_here"
-  -H "Authorization: 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b"
-```
-
 The key should be prefixed by the string literal "Token", with whitespace separating the two strings.
 
 `Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b`
@@ -56,25 +51,6 @@ Unauthenticated responses that are denied permission will result in an HTTP 401 
 `WWW-Authenticate: Token`
 
 ## Obtaining authorization tokens
-
-```http
-require 'kittn'
-
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
-```
-
-```php
-curl "http://example.com/api/kittens"
-  -H "Authorization: meowmeowmeow"
-```
-
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
-```
 
 To obtain a authorization token the fallowing HTTP request has to be performed.
 
