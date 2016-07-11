@@ -17,6 +17,7 @@ includes:
   - tasks
   - taskevents
   - contactaddresses
+  - routeoptimizations
   - fileuploads
   - documents
   - signatures
