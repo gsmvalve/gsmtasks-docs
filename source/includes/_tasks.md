@@ -230,3 +230,19 @@ assignee        | String  | No       | URL of the user resource the task has bee
 auto_assign     | Boolean | No       | Should the task be auto assigned to the best suited driver
 duration        | String  | No       | Duration planned for the completion of the task at location
 metafields      | Object  | No       | Metafields contain custom datafields that have been configured
+
+### Using serialized objects instead of URLs
+
+For the assignee field, it is possible to create a task using a short serialized representation of the user object instead of the user's hyperlink. The user will be looked up on the server side using the provided e-mail address.
+
+```json
+{
+  "account": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/",
+  "address": {
+    "raw_address": "Piccadilly Circus, London, United Kingdom"
+  },
+  "assignee": {
+    "email": "worker@mycompany.com"
+  }
+}
+```
