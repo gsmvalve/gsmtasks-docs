@@ -52,9 +52,9 @@ Unauthenticated responses that are denied permission will result in an HTTP 401 
 
 `WWW-Authenticate: Token`
 
-## Obtaining authorization tokens
+## Obtaining authentication tokens
 
-To obtain a authorization token the fallowing HTTP request has to be performed.
+To obtain a authentication token the fallowing HTTP request has to be performed.
 
 > The request returns JSON structured like this:
 
