@@ -106,6 +106,7 @@ url             | String  | Unique URL for the resource
 account         | String  | URL of the account resource
 external_id     | String  | Unique identifier of an external system for ease of integration
 order           | String  | URL of the order resource
+category        | String  | Category of the task (pickup, drop_off, ...)
 reference       | String  | Order reference number
 contact         | Object  | Contact object describing the contact person for that task
 address         | Object  | Address object describing the location of the task
@@ -221,6 +222,7 @@ Parameter       | Type    | Required | Description
 account         | String  | Yes      | URL of the account resource
 external_id     | String  | No       | Unique identifier of an external system for ease of integration
 reference       | String  | No       | Order reference number
+category        | String  | Yes      | Category of the task (pickup, drop_off, ...)
 contact         | Object  | No       | Contact object describing the contact person for that task
 address         | Object  | Yes      | Address object describing the location of the task
 description     | String  | No       | Description of the task

@@ -41,7 +41,7 @@ tasks         | Array  | Tasks that need to be completed
 
 Request to create a new order with the parameters provided. The tasks that are going to be attached to the order need to be created beforehand or add the tasks later by updating the order.
 
-You can read more about creating tasks [here](#).
+You can read more about creating tasks [here](#tasks).
 
 > Example POST request JSON data:
 
