@@ -8,14 +8,15 @@ Returns a array of users. The users returned are the users to whom you have acce
 
 ```json
 [
-  {
-    "id": "12d2821e-01e2-48fb-97bc-eaebca93cbdc",
-    "url": "https://gsmtasks.com/api/tasks/users/12d2821e-01e2-48fb-97bc-eaebca93cbdc/",
-    "first_name": "Tom",
-    "last_name": "Smith",
-    "email": "tom.smith@fast.uk",
-    "phone": "+447700900132"
-  }
+    {
+        "id": "835cdcf8-9d1e-4718-ad47-4cf0a63626b4",
+        "url": "http://127.0.0.1:8000/api/tasks/users/835cdcf8-9d1e-4718-ad47-4cf0a63626b4/",
+        "first_name": "Tom",
+        "last_name": "Smith",
+        "display_name": "Tom Smith",
+        "email": "tom.smith@fast.uk",
+        "phone": "+447700900132"
+    }
 ]
 ```
 
@@ -29,12 +30,13 @@ id            | String  | -        | Account Role unique identifier
 url           | String  | -        | Unique URL for the resource
 first_name    | String  | -        | First name of the user
 last_name     | String  | -        | Last name of the user
+display_name  | String  | -        | Display name of the user
 email         | String  | -        | Email of the user
 phone         | String  | -        | International phone number of the user
 
 ## Retrieve a specific User
 
-`GET https://gsmtasks.com/api/tasks/task/12d2821e-01e2-48fb-97bc-eaebca93cbdc/`
+`GET https://gsmtasks.com/api/tasks/users/12d2821e-01e2-48fb-97bc-eaebca93cbdc/`
 
 
 ## Create User
@@ -56,15 +58,17 @@ Request to create a new user with the parameters provided
 
 ```json
 {
-  "id": "12d2821e-01e2-48fb-97bc-eaebca93cbdc",
-  "url": "https://gsmtasks.com/api/tasks/users/12d2821e-01e2-48fb-97bc-eaebca93cbdc/",
-  "first_name": "Tom",
-  "last_name": "Smith",
-  "phone": "+447700900132"
+    "id": "835cdcf8-9d1e-4718-ad47-4cf0a63626b4",
+    "url": "http://127.0.0.1:8000/api/tasks/users/835cdcf8-9d1e-4718-ad47-4cf0a63626b4/",
+    "first_name": "Tom",
+    "last_name": "Smith",
+    "display_name": "Tom Smith",
+    "email": "tom.smith@fast.uk",
+    "phone": "+447700900132"
 }
 ```
 
-`POST https://gsmtasks.com/api/tasks/accounts/`
+`POST https://gsmtasks.com/api/tasks/users/`
 
 ### Request parameters
 
