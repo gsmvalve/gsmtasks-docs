@@ -43,7 +43,9 @@ Returns a array of Contact Addresses that the user has access to.
       "postal_code": "W1D 7ET",
       "country": "United Kingdom",
       "country_code": "GB"
-    }
+    },
+    "created_at": "2016-10-06T11:09:52.856869Z",
+    "updated_at": "2016-10-06T11:16:00.563052Z"
   }
 ]
 ```
@@ -60,6 +62,8 @@ account       | String | URL of the account resource
 client        | String | URL of the client resource
 contact       | Object | Contact object
 address       | Object | Address object
+created_at   | String | The time when the contact address was created
+updated_at    | String | The time when the contact address was updated
 
 ## Retrieve a specific Contact Address
 
@@ -123,7 +127,9 @@ Request to create a new Contact Address with the parameters provided
     "postal_code": "W1D 7ET",
     "country": "United Kingdom",
     "country_code": "GB"
-  }
+  },
+  "created_at": "2016-10-06T11:09:52.856869Z",
+  "updated_at": "2016-10-06T11:16:00.563052Z"
 }
 ```
 
