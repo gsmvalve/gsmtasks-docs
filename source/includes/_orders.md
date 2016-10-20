@@ -146,7 +146,7 @@ You can not remove the tasks from the order that have already been completed or 
 }
 ```
 
-`POST https://gsmtasks.com/api/tasks/orders/4336f911-32ec-4fb4-b17a-e58aef3943e6/`
+`PUT https://gsmtasks.com/api/tasks/orders/4336f911-32ec-4fb4-b17a-e58aef3943e6/`
 
 ### Request parameters
 
@@ -154,3 +154,7 @@ Parameter     | Type   | Required | Description
 ------------  | ------ | -------  | -----------
 account       | String | Yes      | URL of the account resource
 tasks         | Array  | No       | Tasks that need to be completed
+external_id   | String | No       | 
+reference     | String | No       | 
+client        | String | No       | URL of the client resource
+auto_assigne  | Boolena| No       | Should the tasks be auto assigned to a driver
