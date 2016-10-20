@@ -139,8 +139,8 @@ complete_after      | String  | Sets the time after what the task should be comp
 complete_before     | String  | Sets the time before what the task should be completed
 scheduled_time      | String  | The time scheduled by the worker from the mobile app
 state               | String  | Show the current state of the task
-completed_at        | String  |
-cancelled_at        | String  |
+completed_at        | String  | The time when the task was completed
+cancelled_at        | String  | The time when the task was cancelled
 assignee            | String  | URL of the user resource the task has been assigned to
 auto_assign         | Boolean | Should the task be auto assigned to the best suited driver
 assignee_proximity  | String  |
@@ -151,8 +151,8 @@ duration            | String  | Duration planned for the completion of the tas
 is_full_load        | Boolean |
 metafields          | Object  | Metafields contain custom datafields that have been configured
 issues              | Array   |
-created_at          | String  |
-updated_at          | String  |
+created_at          | String  | The time when the task was created
+updated_at          | String  | The time when the task was updated
 events              | String  | URL to fetch all the task related events
 documents           | String  | URL to fetch all the task related documents
 signatures          | String  | URL to fetch all the task related signatures
@@ -255,19 +255,19 @@ Request to create a new task with the parameters provided
     "issues": [],
     "created_at": "2016-10-18T12:51:49.972662Z",
     "updated_at": "2016-10-18T13:00:17.957134Z",
-    "events": "http://127.0.0.1:8000/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/events/",
-    "documents": "http://127.0.0.1:8000/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/documents/",
-    "signatures": "http://127.0.0.1:8000/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/signatures/",
+    "events": "https://gsmtasks.com/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/events/",
+    "documents": "https://gsmtasks.com/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/documents/",
+    "signatures": "https://gsmtasks.com/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/signatures/",
     "actions": {
-        "activate": "http://127.0.0.1:8000/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/activate/",
-        "complete": "http://127.0.0.1:8000/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/complete/",
-        "transit": "http://127.0.0.1:8000/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/transit/",
-        "accept": "http://127.0.0.1:8000/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/accept/",
-        "cancel": "http://127.0.0.1:8000/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/cancel/",
-        "unassign": "http://127.0.0.1:8000/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/unassign/",
-        "reject": "http://127.0.0.1:8000/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/reject/",
-        "fail": "http://127.0.0.1:8000/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/fail/",
-        "assign": "http://127.0.0.1:8000/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/assign/"
+        "activate": "https://gsmtasks.com/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/activate/",
+        "complete": "https://gsmtasks.com/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/complete/",
+        "transit": "https://gsmtasks.com/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/transit/",
+        "accept": "https://gsmtasks.com/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/accept/",
+        "cancel": "https://gsmtasks.com/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/cancel/",
+        "unassign": "https://gsmtasks.com/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/unassign/",
+        "reject": "https://gsmtasks.com/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/reject/",
+        "fail": "https://gsmtasks.com/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/fail/",
+        "assign": "https://gsmtasks.com/api/tasks/tasks/b779cd0b-5f32-4bb6-8d5e-d9c44535e682/assign/"
     },
     "counts": {
         "events": null,
@@ -286,17 +286,24 @@ Request to create a new task with the parameters provided
 Parameter       | Type    | Required | Description
 --------------- | ------- | -------- | -----------
 account         | String  | Yes      | URL of the account resource
-external_id     | String  | No       | Unique identifier of an external system for ease of integration
 order           | String  | No       | URL of the order
+external_id     | String  | No       | Unique identifier of an external system for ease of integration
 category        | String  | Yes      | Category of the task (pickup, drop_off, ...)
-reference       | String  | No       | Order reference number
+orderer         | String  |          |     
+receiver        | String  |          |   
 contact         | Object  | No       | Contact object describing the contact person for that task
 address         | Object  | Yes      | Address object describing the location of the task
 description     | String  | No       | Description of the task
+reference       | String  | No       | Order reference number
 complete_after  | String  | No       | Sets the time after what the task should be completed (if not defined it will default to creation time)
 complete_before | String  | No       | Sets the time before what the task should be completed
+scheduled_time  | String  | No       | 
 assignee        | String  | No       | URL of the user resource the task has been assigned to
 auto_assign     | Boolean | No       | Should the task be auto assigned to the best suited driver
+preceding_tasks |         |          |   
+previous_task   |         |          |   
+next_task       |         |          |   
+position        |         |          |      
 duration        | String  | No       | Duration planned for the completion of the task at location
 metafields      | Object  | No       | Metafields contain custom datafields that have been configured
 
