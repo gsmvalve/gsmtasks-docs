@@ -43,7 +43,9 @@ Returns a array of route optimizations that the user has access to.
     "start_location": null,
     "end_location": null,
     "total_distance": null,
-    "total_duration": null
+    "total_duration": null,
+    "created_at": "2016-10-10T13:26:33.979847Z",
+    "updated_at": "2016-10-10T13:26:33.979877Z"
   }
 ]
 ```
@@ -63,6 +65,8 @@ start_location | String | 
 end_location   | String | 
 total_distance | String | Distance of the optimized route
 total_duration | String | Duration of the optimized route
+created_at    | String | The time when the route optimization  was created
+updated_at     | String | The time when the route optimization was updated
 
 ## Retrieve a specific Route optimization
 
@@ -103,7 +107,9 @@ Request to create a new route optimization with the parameters provided
   "start_location": null,
   "end_location": null,
   "total_distance": null,
-  "total_duration": null
+  "total_duration": null,
+  "created_at": "2016-10-10T13:26:33.979847Z",
+  "updated_at": "2016-10-10T13:26:33.979877Z"
 }
 ```
 
