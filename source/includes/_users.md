@@ -10,7 +10,7 @@ Returns a array of users. The users returned are the users to whom you have acce
 [
     {
         "id": "835cdcf8-9d1e-4718-ad47-4cf0a63626b4",
-        "url": "http://127.0.0.1:8000/api/tasks/users/835cdcf8-9d1e-4718-ad47-4cf0a63626b4/",
+        "url": "https://gsmtasks.com/api/tasks/users/835cdcf8-9d1e-4718-ad47-4cf0a63626b4/",
         "first_name": "Tom",
         "last_name": "Smith",
         "display_name": "Tom Smith",
@@ -24,15 +24,15 @@ Returns a array of users. The users returned are the users to whom you have acce
 
 ### Attributes
 
-Attribute     | Type    | Required | Description
-------------  | ------- | -------  | -----------
-id            | String  | -        | Account Role unique identifier
-url           | String  | -        | Unique URL for the resource
-first_name    | String  | -        | First name of the user
-last_name     | String  | -        | Last name of the user
-display_name  | String  | -        | Display name of the user
-email         | String  | -        | Email of the user
-phone         | String  | -        | International phone number of the user
+Attribute     | Type    | Description
+------------  | ------- | -----------
+id            | String  | Account Role unique identifier
+url           | String  | Unique URL for the resource
+first_name    | String  | First name of the user
+last_name     | String  | Last name of the user
+display_name  | String  | Display name of the user
+email         | String  | Email of the user
+phone         | String  | International phone number of the user
 
 ## Retrieve a specific User
 
@@ -59,7 +59,7 @@ Request to create a new user with the parameters provided
 ```json
 {
     "id": "835cdcf8-9d1e-4718-ad47-4cf0a63626b4",
-    "url": "http://127.0.0.1:8000/api/tasks/users/835cdcf8-9d1e-4718-ad47-4cf0a63626b4/",
+    "url": "https://gsmtasks.com/api/tasks/users/835cdcf8-9d1e-4718-ad47-4cf0a63626b4/",
     "first_name": "Tom",
     "last_name": "Smith",
     "display_name": "Tom Smith",
@@ -74,7 +74,7 @@ Request to create a new user with the parameters provided
 
 Parameter        | Type    | Required | Description
 ---------------- | ------- | -------  | -----------
-first_name       | String  | -        | First name of the user
-last_name        | String  | -        | Last name of the user
-email            | String  | -        | Email of the user
-phone            | String  | -        | International phone number of the user
+first_name       | String  | No       | First name of the user
+last_name        | String  | No       | Last name of the user
+email            | String  | Yes      | Email of the user
+phone            | String  | No       | International phone number of the user
