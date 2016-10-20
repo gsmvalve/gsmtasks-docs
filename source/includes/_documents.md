@@ -21,10 +21,13 @@ Returns a array of documents that the user has access to.
     "order": null,
     "file": "https://gsmtasks.com/media/fileupload/874965eb-1de6-442a-92f0-2cadbed45716/attachment.xlsx",
     "size": 8550,
+    "is_image": false,
     "description": "Attached Excel spreadsheet",
     "created_by": "https://gsmtasks.com/api/tasks/users/12d2821e-01e2-48fb-97bc-eaebca93cbdc/",
     "visible_to_worker": true,
-    "visible_to_client": true
+    "visible_to_client": true,
+    "created_at": "2016-10-06T11:09:52.856869Z",
+    "updated_at": "2016-10-06T11:16:00.563052Z"
   }
 ]
 ```
@@ -41,10 +44,13 @@ task              | String  | URL of the task resource
 order             | String  | URL of the order resource
 file              | String  | URL of the file for downloading
 size              | Number  | Size of the file uploaded in bytes
-description       | String  | Description of the file attached
+is_image          | Boolean | Defines if the upload is an image
+description       | String  | Description of the file attached
 created_by        | String  | URL of the user who created the upload
-visible_to_worker | Boolean | Defines if the document is visible for worker
-visible_to_client | Boolean | Defines if the document is visible to orderer / client
+visible_to_worker | Boolean  | Defines if the document is visible for worker
+visible_to_client | Boolean  | Defines if the document is visible to orderer / client
+created_at       | String  | The time when the document was created
+updated_at        | String  | The time when the document was updated
 
 ## Create Document
 
@@ -73,10 +79,13 @@ Request to create a new document with the parameters provided
   "order": null,
   "file": "https://gsmtasks.com/media/fileupload/874965eb-1de6-442a-92f0-2cadbed45716/attachment.xlsx",
   "size": 8550,
+  "is_image": false,
   "description": "Attached Excel spreadsheet",
   "created_by": "https://gsmtasks.com/api/tasks/users/12d2821e-01e2-48fb-97bc-eaebca93cbdc/",
   "visible_to_worker": true,
-  "visible_to_client": true
+  "visible_to_client": true,
+  "created_at": "2016-10-06T11:09:52.856869Z",
+  "updated_at": "2016-10-06T11:16:00.563052Z"
 }
 ```
 
