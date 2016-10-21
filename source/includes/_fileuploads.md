@@ -38,6 +38,10 @@ is_image      | Boolean | Defines if the upload is an image
 created_at    | String  | The time when the file upload was created
 updated_at    | String  | The time when the order file upload updated
 
+## Retrieve a specific File upload
+
+`GET https://gsmtasks.com/api/tasks/file_uploads/874965eb-1de6-442a-92f0-2cadbed45716/`
+
 ## Create a file upload
 
 Request to create a new file with the parameters provided and the base64 encoded file data.
