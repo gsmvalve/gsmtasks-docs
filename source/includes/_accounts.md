@@ -64,7 +64,7 @@ Attribute                   | Type    | Description
 id                          | String  | Account unique identifier
 url                         | String  | Unique URL for the resource
 name                        | String  | Name of the account for easy reference
-slug                        | String  | Human readable account identifier
+slug                        | String  | Machine readable account identifier
 timezone                    | String  | [Timezone name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for dates and time
 country_code                | String  | ISO 2 [country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
 address                     | Object  | Address object describing the location of the account
