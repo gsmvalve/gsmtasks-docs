@@ -143,3 +143,76 @@ account       | String | Yes      | URL of the account resource
 client        | String | No       | URL of the client resource
 contact       | Object | Yes      | Contact object
 address       | Object | Yes      | Address object
+
+## Update Contact Address
+
+Request to update a Contact Address. We will change the client and contact as an example.
+
+> Example PUT request JSON data:
+
+```json
+{
+  "account": "https://gsmtasks.com/api/tasks/accounts/4f946a84-fb06-43ac-b98d-d2b38bbe307a/",
+  "client": "https://gsmtasks.com/api/tasks/clients/3d7cc9e6-f63f-4c85-886f-7b720939e8a6/",
+  "contact": {
+    "name": "James ",
+    "company": "Smith",
+    "phone": "+447700900132",
+    "email": "James.smith@fast.uk",
+    "notes": "Call 5 minutes before"
+  },
+  "address": {}
+}
+```
+
+> The request returns JSON of the updated Contact Address structured like this:
+
+```json
+{
+  "id": "a36ff250-df3d-4515-af4a-14c48558b297",
+  "url": "https://gsmtasks.com/api/tasks/contact_addresses/a36ff250-df3d-4515-af4a-14c48558b297/",
+  "account": "https://gsmtasks.com/api/tasks/accounts/4f946a84-fb06-43ac-b98d-d2b38bbe307a/",
+  "client": "https://gsmtasks.com/api/tasks/clients/3d7cc9e6-f63f-4c85-886f-7b720939e8a6/",
+  "contact": {
+    "name": "James ",
+    "company": "Smith",
+    "phone": "+447700900132",
+    "email": "James.smith@fast.uk",
+    "notes": "Call 5 minutes before"
+  },
+  "address": {
+    "raw_address": "Piccadilly Circus, London, United Kingdom",
+    "formatted_address": "Piccadilly Circus, London W1D 7ET, UK",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -0.13457340000002205,
+        51.5100974
+      ]
+    },
+    "google_place_id": "ChIJwR8g_9MEdkgR_rI--wzfivA",
+    "point_of_interest": "",
+    "street": "Piccadilly Circus",
+    "house_number": "",
+    "apartment_number": "",
+    "city": "London",
+    "state": "",
+    "postal_code": "W1D 7ET",
+    "country": "United Kingdom",
+    "country_code": "GB"
+  },
+  "created_at": "2016-10-06T11:09:52.856869Z",
+  "updated_at": "2016-10-06T11:16:00.563052Z"
+}
+```
+
+`PUT https://gsmtasks.com/api/tasks/contact_addresses/a36ff250-df3d-4515-af4a-14c48558b297/`
+
+### Request parameters
+
+Parameter     | Type   | Required | Description
+------------  | ------ | -------  | -----------
+account       | String | Yes      | URL of the account resource
+client        | String | No       | URL of the client resource
+contact       | Object | Yes      | Contact object
+address       | Object | Yes      | Address object
