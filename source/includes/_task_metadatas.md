@@ -2,7 +2,7 @@
 
 ## List Task Metadatas
 
-Returns a array of orders that the user has access to.
+Returns a array of task metadatas that the user has access to.
 
 > The request returns JSON structured like this:
 
