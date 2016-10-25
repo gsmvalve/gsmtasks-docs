@@ -42,15 +42,15 @@ Attribute     | Type   | Description
 id            | String | Time location unique identifier
 url           | String | Unique URL for the resource
 user          | String | URL of the user who created time location
-time          | String |
-location      | Object | A GEOJSON object ????
-registration  | String |
-state         | String | Unknown, stopped or moving.
-heading       | Integer|
-speed         | Integer|
-altitude      | Integer|
-accuracy      | Integer|
-battery_level |        |
+time          | String | Time when the time location was created
+location      | Object | A GeoJSON object ????
+registration  | String | Car number plate
+state         | String | unknown, stopped or moving.
+heading       | Integer| Where the car was heading
+speed         | Integer| Speed of the car
+altitude      | Integer| Altitude of the car
+accuracy      | Integer| Accuracy 
+battery_level |        | Battery level
 created_at    | String | The time when the order was created
 updated_at    | String | The time when the order was updated
 
@@ -117,12 +117,12 @@ Request to create a new time location with the parameters provided.
 
 Attribute     | Type   | Required | Description
 ------------  | ------ | -------- | -----------
-time          | String | Yes      |
-location      | Object | Yes      | A GEOJSON object ????
-registration  | String | No       |
+time          | String | Yes      | Time when the time location was created
+location      | Object | Yes      | A GeoJSON object
+registration  | String | No       | Car number plate
 state         | String | Yes      | Unknown, stopped or moving.
-heading       | Integer| No       |
-speed         | Integer| No       |
-altitude      | Integer| No       |
-accuracy      | Integer| No       |
-battery_level |        | No       |
+heading       | Integer| No       | Where the car was heading
+speed         | Integer| No       | Speed of the car
+altitude      | Integer| No       | Altitude of the car
+accuracy      | Integer| No       | Accuracy
+battery_level |        | No       | Battery level

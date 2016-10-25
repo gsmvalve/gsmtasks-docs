@@ -81,8 +81,8 @@ Parameter        | Type    | Required | Description
 ---------------- | ------- | -------  | -----------
 account          | String  | Yes      | Name of the account for easy reference
 user             | String  | Yes      | URL of the user resource
-is_manager       | Boolean | -        | Manager access boolean
-is_worker        | Boolean | -        | Worker access boolean
+is_manager       | Boolean | Yes      | Manager access boolean
+is_worker        | Boolean | Yes      | Worker access boolean
 
 ## Update Account Role
 

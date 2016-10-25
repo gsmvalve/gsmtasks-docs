@@ -68,7 +68,7 @@ from_state    | String | The state from where the event was triggered
 to_state      | String | The state to which the task was transitioned to
 user          | String | URL of the user who triggered the event
 notes         | String | Any comments / notes attached to the event
-location      | Object | A GEOJSON object that defines the location from where the task was triggered from
+location      | Object | A GeoJSON object that defines the location from where the task was triggered from
 assignee      | String | URL of the user who the task was assigned to
 created_at    | String | The time when the task event was created
 updated_at    | String | The time when the task event was updated

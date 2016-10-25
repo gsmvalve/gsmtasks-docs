@@ -98,8 +98,8 @@ You can read more about creating tasks [here](#tasks).
 Parameter     | Type   | Required | Description
 ------------  | ------ | -------  | -----------
 account       | String | Yes      | URL of the account resource
-external_id   | String | No       |
-reference     | String | No       |
+external_id   | String | No       | External id of the order
+reference     | String | No       | Reference of the order
 client        | String | No       | URL of the client
 tasks         | Array  | No       | Tasks that need to be completed referenced by the URLs
 auto_assign   | Boolean| No       | Should the tasks be auto assigned to a driver
@@ -154,7 +154,7 @@ Parameter     | Type   | Required | Description
 ------------  | ------ | -------  | -----------
 account       | String | Yes      | URL of the account resource
 tasks         | Array  | No       | Tasks that need to be completed
-external_id   | String | No       | 
-reference     | String | No       | 
+external_id   | String | No       | External id of the order
+reference     | String | No       | Reference of the order
 client        | String | No       | URL of the client resource
 auto_assigne  | Boolena| No       | Should the tasks be auto assigned to a driver

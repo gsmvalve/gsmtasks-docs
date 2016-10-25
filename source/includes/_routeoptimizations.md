@@ -61,11 +61,11 @@ url            | String | Unique URL for the resource
 account        | String | URL of the account resource
 assignee       | String | URL of the user resource
 tasks          | Array  | URLs of the task resources to be optimized
-start_location | String | 
-end_location   | String | 
+start_location | String | Starting location
+end_location   | String | Ending location
 total_distance | String | Distance of the optimized route
 total_duration | String | Duration of the optimized route
-created_at    | String | The time when the route optimization  was created
+created_at     | String  | The time when the route optimization  was created
 updated_at     | String | The time when the route optimization was updated
 
 ## Retrieve a specific Route optimization

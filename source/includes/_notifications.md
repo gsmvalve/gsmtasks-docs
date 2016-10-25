@@ -57,7 +57,7 @@ updated_at    | String | The time when the notification was updated
 
 `GET https://gsmtasks.com/api/tasks/notifications/5bb47214-66a1-4f1e-9e00-ee287e3648ec/`
 
-## Create Notifiation
+## Create Notification
 
 Request to create a new Notification with the parameters provided.
 

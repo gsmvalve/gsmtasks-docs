@@ -135,7 +135,7 @@ Request to create a new account with the parameters provided
 Parameter     | Type   | Required | Description
 ------------  | ------ | -------  | -----------
 name          | String | Yes      | Name of the account for easy reference
-timezone      | String | -        | [Timezone name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for dates and time
+timezone      | String | No       | [Timezone name](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones) for dates and time
 country_code  | String | No       | ISO 2 [country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
 user          | object | Yes      | User object 
 
