@@ -12,9 +12,9 @@ Returns a array of metafields that the user has access to.
         "id": "b0f05cbb-4022-4cf8-b471-373b1bfbd1b5",
         "url": "https://gsmtasks.com/api/tasks/metafields/b0f05cbb-4022-4cf8-b471-373b1bfbd1b5/",
         "account": "https://gsmtasks.com/api/tasks/accounts/a6f60fdf-d87b-4c5d-b5ec-67a90cd16236/",
-        "namespace": "namespace",
-        "key": "metafield",
-        "field_name": "namespace:metafield",
+        "namespace": "account",
+        "key": "metafield1",
+        "field_name": "account:metafield1",
         "value_type": "string",
         "label": "App",
         "choices": null,
@@ -37,8 +37,8 @@ Attribute           | Type   | Description
 id                  | String | Client unique identifier
 url                 | String | Unique URL for the resource
 account             | String | URL of the account resource
-namespace           | String | Name of the client
-key                 | String | 
+namespace           | String | Namespace of this metafield which defines the scope of the attribute, e.g. 'account'
+key                 | String | Key of this metafield, which names the attribute key in the metafields dict
 field_name          | String | 
 value_type          | String | 
 label               | String | 
@@ -63,8 +63,8 @@ Request to create a new Metafield with the parameters provided.
 ```json
 {
     "account": "https://gsmtasks.com/api/tasks/accounts/a6f60fdf-d87b-4c5d-b5ec-67a90cd16236/",
-    "namespace": "namespace",
-    "key": "metafield",
+    "namespace": "account",
+    "key": "metafield1",
     "value_type": "string",
     "label": "App",
     "choices": ["choice 1", "choice 2"],
@@ -82,9 +82,9 @@ Request to create a new Metafield with the parameters provided.
         "id": "b0f05cbb-4022-4cf8-b471-373b1bfbd1b5",
         "url": "https://gsmtasks.com/api/tasks/metafields/b0f05cbb-4022-4cf8-b471-373b1bfbd1b5/",
         "account": "https://gsmtasks.com/api/tasks/accounts/a6f60fdf-d87b-4c5d-b5ec-67a90cd16236/",
-        "namespace": "namespace",
-        "key": "metafield",
-        "field_name": "namespace:metafield",
+        "namespace": "account",
+        "key": "metafield1",
+        "field_name": "account:metafield1",
         "value_type": "string",
         "label": "App",
         "choices": null,
@@ -104,8 +104,8 @@ Request to create a new Metafield with the parameters provided.
 Parameter             | Type   | Required | Description
 --------------------- | ------ | -------  | -----------
 account               | String | Yes      | URL of the account resource
-namespace             | String | Yes      | 
-key                   | String | Yes      | 
+namespace             | String | Yes      | Namespace of this metafield which defines the scope of the attribute, e.g. 'account'
+key                   | String | Yes      | Key of this metafield, which names the attribute key in the metafields dict
 value_type            | String | Yes      |
 label                 | String | No       |
 choices               | Array  | No       |
@@ -137,7 +137,7 @@ Request to update a Metafield. We will change the namespace and key as an exampl
     "account": "https://gsmtasks.com/api/tasks/accounts/a6f60fdf-d87b-4c5d-b5ec-67a90cd16236/",
     "namespace": "metafield",
     "key": "updated",
-    "field_name": "namespace:metafield",
+    "field_name": "metafield:updated",
     "value_type": "string",
     "label": "App",
     "choices": null,
@@ -157,9 +157,9 @@ Request to update a Metafield. We will change the namespace and key as an exampl
 Parameter             | Type   | Required | Description
 --------------------- | ------ | -------  | -----------
 account               | String | Yes      | URL of the account resource
-namespace             | String | No       | 
-key                   | String | Yes      | 
-value_type            | String | No       |
+namespace             | String | Yes      | Namespace of this metafield which defines the scope of the attribute, e.g. 'account'
+key                   | String | Yes      | Key of this metafield, which names the attribute key in the metafields dict
+value_type            | String | Yes      |
 label                 | String | No       |
 choices               | Array  | No       |
 is_editable           | Boolean| No       |
