@@ -62,7 +62,7 @@ Attribute     | Type   | Description
 id            | String | Task Event unique identifier
 url           | String | Unique URL for the resource
 task          | String | URL of the task resource
-field         | String | ????
+field         | String | Scope of the event: 'state' or 'assignee_proximity'
 event         | String | Event name
 from_state    | String | The state from where the event was triggered
 to_state      | String | The state to which the task was transitioned to
