@@ -1,14 +1,5 @@
 # Notifications
 
-recipient   | Description
------------ | -----------
-account     | 
-asignee     | 
-orderer     | 
-receiver    | 
-contact     | 
-client      | 
-
 ## List Notifications
 
 Returns a array of notifications that the user has access to.
@@ -44,8 +35,8 @@ Attribute     | Type   | Description
 id            | String | notification unique identifier
 url           | String | Unique URL for the resource
 task          | String | URL of the task resource
-event         | String | ?????????
-recipient     | String | Task event choices ???????
+event         | String |
+recipient     | String |
 emails        | Array  | 
 phone         | String |      
 app           | Boolean|
@@ -104,7 +95,7 @@ Request to create a new Notification with the parameters provided.
 Parameter     | Type   | Required | Description
 ------------  | ------ | -------  | -----------
 task          | String | Yes      | URL of the task resource
-event         | String | No       | Task event state choices ?????
+event         | String | No       | 
 recipient     | String | No       | 
 emails        | Array  | No       |            
 phone         | String | No       |   
