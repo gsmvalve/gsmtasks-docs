@@ -44,13 +44,7 @@ Returns a array of accounts that the user has access to.
         },
         "managers": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/managers/",
         "workers": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/workers/",
-        "task_duration": "00:05:00",
-        "dashboard_task_template": "",
-        "dashboard_worker_limit": 10,
-        "feature_sidebar_task_form": true,
-        "feature_task_created_sound": false,
-        "feature_change_task_account": false,
-        "feature_show_tutorial": false
+        "task_duration": "00:05:00"
     }
 ]
 ```
@@ -70,13 +64,8 @@ country_code                | String  | ISO 2 [country code](https://en.wikiped
 address                     | Object  | Address object describing the location of the account
 managers                    | String  | URL for easy access to account managers
 workers                     | String  | URL for easy access to account workers
-task_duration               | String  | 
-dashboard_task_template     | String  |  
-dashboard_worker_limit      | Integer |
-feature_sidebar_task_form   | Boolean |
-feature_task_created_sound  | Boolean |
-feature_change_task_account | Boolean |
-feature_show_tutorial       | Boolean |
+task_duration               | String  | Default task duration in the format of HH:MM:SS
+
 
 ## Retrieve a specific Account
 
