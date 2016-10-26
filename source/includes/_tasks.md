@@ -5,7 +5,6 @@ All orders consist of tasks. Task is a waypoint that has to be completed in orde
 Category    | Description
 ----------- | -----------
 assignment  | Assignment task with no dependencies
-warehouse   |
 pick_up     | Pick up task (dependency - always before drop offs)
 drop_off    | Drop off task (dependency - always after pick ups)
 
@@ -141,19 +140,19 @@ completed_at        | String  | The time when the task was completed
 cancelled_at        | String  | The time when the task was cancelled
 assignee            | String  | URL of the user resource the task has been assigned to
 auto_assign         | Boolean | Should the task be auto assigned to the best suited driver
-assignee_proximity  | String  |
-position            | String  |
+assignee_proximity  | String  | Whether the assignee is near this task or away
+position            | String  | Task position is the sort order in the specified assignee's task list
 duration            | String  | Duration planned for the completion of the task at location
-is_full_load        | Boolean |
+is_full_load        | Boolean | Whether this task is a full load and the assignee cannot carry another at the same time
 metafields          | Object  | Metafields contain custom datafields that have been configured
-issues              | Array   |
+issues              | Array   | List of issues detected with the task, e.g. geocoding failures etc
 created_at          | String  | The time when the task was created
 updated_at          | String  | The time when the task was updated
 events              | String  | URL to fetch all the task related events
 documents           | String  | URL to fetch all the task related documents
 signatures          | String  | URL to fetch all the task related signatures
 actions             | Object  | 
-counts              |         | 
+counts              | Object  | 
 
 ## Retrieve a specific Task
 
@@ -283,18 +282,18 @@ account         | String  | Yes      | URL of the account resource
 order           | String  | No       | URL of the order
 external_id     | String  | No       | Unique identifier of an external system for ease of integration
 category        | String  | Yes      | Category of the task (pickup, drop_off, ...)
-orderer         | String  |          |     
-receiver        | String  |          |   
+orderer         | String  | No       | URL of the orderer    
+receiver        | String  | No       | URL of the receiver  
 contact         | Object  | No       | Contact object describing the contact person for that task
 address         | Object  | Yes      | Address object describing the location of the task
 description     | String  | No       | Description of the task
 reference       | String  | No       | Order reference number
 complete_after  | String  | No       | Sets the time after what the task should be completed (if not defined it will default to creation time)
 complete_before | String  | No       | Sets the time before what the task should be completed
-scheduled_time  | String  | No       | 
+scheduled_time  | String  | No       | The time scheduled by the worker from the mobile app
 assignee        | String  | No       | URL of the user resource the task has been assigned to
 auto_assign     | Boolean | No       | Should the task be auto assigned to the best suited driver
-position        |         |          |      
+position        | String  | No       | Task position is the sort order in the specified assignee's task list     
 duration        | String  | No       | Duration planned for the completion of the task at location
 metafields      | Object  | No       | Metafields contain custom datafields that have been configured
 
@@ -432,17 +431,17 @@ account         | String  | Yes      | URL of the account resource
 order           | String  | No       | URL of the order
 external_id     | String  | No       | Unique identifier of an external system for ease of integration
 category        | String  | Yes      | Category of the task (pickup, drop_off, ...)
-orderer         | String  |          |     
-receiver        | String  |          |   
+orderer         | String  | No       | URL of the orderer      
+receiver        | String  | No       | URL of the receiver    
 contact         | Object  | No       | Contact object describing the contact person for that task
 address         | Object  | Yes      | Address object describing the location of the task
 description     | String  | No       | Description of the task
 reference       | String  | No       | Order reference number
 complete_after  | String  | No       | Sets the time after what the task should be completed (if not defined it will default to creation time)
 complete_before | String  | No       | Sets the time before what the task should be completed
-scheduled_time  | String  | No       | 
+scheduled_time  | String  | No       | The time scheduled by the worker from the mobile app
 assignee        | String  | No       | URL of the user resource the task has been assigned to
 auto_assign     | Boolean | No       | Should the task be auto assigned to the best suited driver
-position        |         |          |      
+position        | String  | No       | Task position is the sort order in the specified assignee's task list       
 duration        | String  | No       | Duration planned for the completion of the task at location
 metafields      | Object  | No       | Metafields contain custom datafields that have been configured
