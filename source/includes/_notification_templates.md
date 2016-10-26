@@ -36,7 +36,7 @@ id            | String | Notificaton template unique identifier
 url           | String | Unique URL for the resource
 account       | String | URL of the account resource
 name          | String | Name of the notification template
-event         | String | Task event choices ???
+event         | String | 
 recipient     | String |
 via_sms       | Boolean| 
 via_email     | Boolean|
@@ -96,7 +96,7 @@ Parameter     | Type   | Required | Description
 ------------  | ------ | -------- | -----------
 account       | String | Yes      | URL of the account resource
 name          | String | Yes      | Name of the notification template
-event         | String | Yes      | Task event choices ???
+event         | String | Yes      | 
 recipient     | String | Yes      |
 via_sms       | Boolean| No       | 
 via_email     | Boolean| No       |
@@ -148,7 +148,7 @@ Parameter     | Type   | Required | Description
 ------------  | ------ | -------- | -----------
 account       | String | Yes      | URL of the account resource
 name          | String | Yes      | Name of the notification template
-event         | String | No       | Task event choices ???
+event         | String | No       | 
 recipient     | String | No       |
 via_sms       | Boolean| No       | 
 via_email     | Boolean| No       |
