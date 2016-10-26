@@ -294,8 +294,6 @@ complete_before | String  | No       | Sets the time before what the task should
 scheduled_time  | String  | No       | 
 assignee        | String  | No       | URL of the user resource the task has been assigned to
 auto_assign     | Boolean | No       | Should the task be auto assigned to the best suited driver
-previous_task   |         |          |   
-next_task       |         |          |   
 position        |         |          |      
 duration        | String  | No       | Duration planned for the completion of the task at location
 metafields      | Object  | No       | Metafields contain custom datafields that have been configured
@@ -445,7 +443,6 @@ complete_before | String  | No       | Sets the time before what the task should
 scheduled_time  | String  | No       | 
 assignee        | String  | No       | URL of the user resource the task has been assigned to
 auto_assign     | Boolean | No       | Should the task be auto assigned to the best suited driver
-next_task       |         |          |   
 position        |         |          |      
 duration        | String  | No       | Duration planned for the completion of the task at location
 metafields      | Object  | No       | Metafields contain custom datafields that have been configured
