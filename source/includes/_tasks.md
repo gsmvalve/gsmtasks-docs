@@ -80,8 +80,6 @@ Returns a array of tasks.
     "assignee": "https://gsmtasks.com/api/tasks/users/cfdf3a8e-a9d7-4878-a922-344081a1ed75/",
     "auto_assign": false,
     "assignee_proximity": "away",
-    "preceding_tasks": [],
-    "following_tasks": [],
     "position": "2015-09-08T04:51:36.732219Z",
     "duration": "00:15:00",
     "is_full_load": false,
@@ -144,8 +142,6 @@ cancelled_at        | String  | The time when the task was cancelled
 assignee            | String  | URL of the user resource the task has been assigned to
 auto_assign         | Boolean | Should the task be auto assigned to the best suited driver
 assignee_proximity  | String  |
-preceding_tasks     | Array   |
-following_tasks     | Array   |
 position            | String  |
 duration            | String  | Duration planned for the completion of the task at location
 is_full_load        | Boolean |
@@ -246,8 +242,6 @@ Request to create a new task with the parameters provided
     "assignee": "https://gsmtasks.com/api/tasks/users/cfdf3a8e-a9d7-4878-a922-344081a1ed75/",
     "auto_assign": false,
     "assignee_proximity": "away",
-    "preceding_tasks": [],
-    "following_tasks": [],
     "position": "2015-09-08T10:00:00Z",
     "duration": null,
     "is_full_load": false,
@@ -300,7 +294,6 @@ complete_before | String  | No       | Sets the time before what the task should
 scheduled_time  | String  | No       | 
 assignee        | String  | No       | URL of the user resource the task has been assigned to
 auto_assign     | Boolean | No       | Should the task be auto assigned to the best suited driver
-preceding_tasks |         |          |   
 previous_task   |         |          |   
 next_task       |         |          |   
 position        |         |          |      
@@ -400,8 +393,6 @@ Request to update a task. We will change the order, external_id and category as 
     "assignee": "https://gsmtasks.com/api/tasks/users/cfdf3a8e-a9d7-4878-a922-344081a1ed75/",
     "auto_assign": false,
     "assignee_proximity": "away",
-    "preceding_tasks": [],
-    "following_tasks": [],
     "position": "2015-09-08T10:00:00Z",
     "duration": null,
     "is_full_load": false,
@@ -454,8 +445,6 @@ complete_before | String  | No       | Sets the time before what the task should
 scheduled_time  | String  | No       | 
 assignee        | String  | No       | URL of the user resource the task has been assigned to
 auto_assign     | Boolean | No       | Should the task be auto assigned to the best suited driver
-preceding_tasks |         |          |   
-previous_task   |         |          |   
 next_task       |         |          |   
 position        |         |          |      
 duration        | String  | No       | Duration planned for the completion of the task at location
