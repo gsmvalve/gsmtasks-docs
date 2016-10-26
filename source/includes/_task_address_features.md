@@ -40,5 +40,5 @@ Attribute     | Type   | Description
 ------------  | ------ | -----------
 id            | String | Task event track unique identifier
 type          | String | Type of the task event track
-geometry      |        |
-properties    |        |
+geometry      | Object |
+properties    | Object |
