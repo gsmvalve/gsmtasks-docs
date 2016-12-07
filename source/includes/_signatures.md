@@ -16,10 +16,11 @@ Returns a array of signatures that the user has access to.
 [
   {
     "id": "c6a66d6d-76e0-4c7e-a22c-02eff4d68b59",
-    "url": "https://gsmtasks.com/api/tasks/documents/c6a66d6d-76e0-4c7e-a22c-02eff4d68b591/",
+    "url": "https://gsmtasks.com/api/tasks/signatures/c6a66d6d-76e0-4c7e-a22c-02eff4d68b591/",
     "task": "https://gsmtasks.com/api/tasks/tasks/d09b5fc0-d82f-42ed-9d5f-022d68f36df6/",
     "file": "https://gsmtasks.com/media/fileupload/874965eb-1de6-442a-92f0-2cadbed45716/attachment.xlsx",
     "size": 8550,
+    "is_image": false,
     "signer": {
       "name": "Tom ",
       "company": "Smith",
@@ -27,7 +28,9 @@ Returns a array of signatures that the user has access to.
       "email": "tom.smith@fast.uk",
       "notes": "All good"
     },
-    "created_by": "https://gsmtasks.com/api/tasks/users/12d2821e-01e2-48fb-97bc-eaebca93cbdc/"
+    "created_by": "https://gsmtasks.com/api/tasks/users/12d2821e-01e2-48fb-97bc-eaebca93cbdc/",
+    "created_at": "2016-10-18T08:34:46.117131Z",
+    "updated_at": "2016-10-18T08:34:46.117157Z"
   }
 ]
 ```
@@ -45,6 +48,12 @@ file              | String  | URL of the file for downloading
 size              | Number  | Size of the file in bytes
 signer            | Object  | Signer object of the signature
 created_by        | String  | URL of the user who created the signature
+created_at        | String  | The time when the signature was created
+updated_at        | String  | The time when the signature was updated
+
+## Retrieve a specific Signature
+
+`GET https://gsmtasks.com/api/tasks/signatures/c6a66d6d-76e0-4c7e-a22c-02eff4d68b591/`
 
 ## Create Signature
 
@@ -56,7 +65,7 @@ Request to create a new document with the parameters provided
 {
   "task": "https://gsmtasks.com/api/tasks/tasks/d09b5fc0-d82f-42ed-9d5f-022d68f36df6/",
   "file_upload": "https://gsmtasks.com/api/tasks/file_uploads/874965eb-1de6-442a-92f0-2cadbed45716/",
-  "contact": {
+  "signer": {
     "name": "Tom ",
     "company": "Smith",
     "phone": "+447700900132",
@@ -75,6 +84,7 @@ Request to create a new document with the parameters provided
   "task": "https://gsmtasks.com/api/tasks/tasks/d09b5fc0-d82f-42ed-9d5f-022d68f36df6/",
   "file": "https://gsmtasks.com/media/fileupload/874965eb-1de6-442a-92f0-2cadbed45716/attachment.xlsx",
   "size": 8550,
+  "is_image": false,
   "signer": {
     "name": "Tom ",
     "company": "Smith",
@@ -82,7 +92,9 @@ Request to create a new document with the parameters provided
     "email": "tom.smith@fast.uk",
     "notes": "All good"
   },
-  "created_by": "https://gsmtasks.com/api/tasks/users/12d2821e-01e2-48fb-97bc-eaebca93cbdc/"
+  "created_by": "https://gsmtasks.com/api/tasks/users/12d2821e-01e2-48fb-97bc-eaebca93cbdc/",
+  "created_at": "2016-10-18T08:34:46.117131Z",
+  "updated_at": "2016-10-18T08:34:46.117157Z"
 }
 ```
 

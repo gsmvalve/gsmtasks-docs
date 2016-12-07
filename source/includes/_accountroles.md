@@ -16,7 +16,9 @@ Currently a very simple system is used and only two types of accesses can be giv
       "account": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/",
       "user": "https://gsmtasks.com/api/tasks/users/18fb9d97-824b-4c2a-9b74-764a88a78c96/",
       "is_manager": false,
-      "is_worker": true
+      "is_worker": true,
+      "created_at": "2016-10-18T08:34:46.117131Z",
+      "updated_at": "2016-10-18T08:34:46.117157Z"
   }
 ]
 ```
@@ -25,14 +27,17 @@ Currently a very simple system is used and only two types of accesses can be giv
 
 ### Attributes
 
-Attribute     | Type    | Required | Description
-------------  | ------- | -------  | -----------
-id            | String  | -        | Account Role unique identifier
-url           | String  | -        | Unique URL for the resource
-account       | String  | Yes      | URL of the account resource
-user          | String  | Yes      | URL of the user resource
-is_manager    | Boolean | -        | Manager access boolean
-is_worker     | Boolean | -        | Worker access boolean
+Attribute     | Type    | Description
+------------  | ------- | -----------
+id            | String  | Account Role unique identifier
+url           | String  | Unique URL for the resource
+account       | String  | URL of the account resource
+user          | String  | URL of the user resource
+is_manager    | Boolean | Manager access boolean
+is_worker     | Boolean | Worker access boolean
+created_at    | String  | The time when the account role was created
+updated_at    | String  | The time when the account role was updated
+
 
 ## Retrieve a specific Account Role
 
@@ -62,11 +67,13 @@ Request to create a new account role with the parameters provided
     "account": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/",
     "user": "https://gsmtasks.com/api/tasks/users/18fb9d97-824b-4c2a-9b74-764a88a78c96/",
     "is_manager": false,
-    "is_worker": true
+    "is_worker": true,
+    "created_at": "2016-10-20T12:55:33.977065Z",
+    "updated_at": "2016-10-20T12:55:33.977092Z"
 }
 ```
 
-`POST https://gsmtasks.com/api/tasks/accounts/`
+`POST https://gsmtasks.com/api/tasks/roles/`
 
 ### Request parameters
 
@@ -74,5 +81,47 @@ Parameter        | Type    | Required | Description
 ---------------- | ------- | -------  | -----------
 account          | String  | Yes      | Name of the account for easy reference
 user             | String  | Yes      | URL of the user resource
-is_manager       | Boolean | -        | Manager access boolean
-is_worker        | Boolean | -        | Worker access boolean
+is_manager       | Boolean | Yes      | Manager access boolean
+is_worker        | Boolean | Yes      | Worker access boolean
+
+## Update Account Role
+
+Request to update a account role. We will change the is_manager to true and is_worker to false as an example.
+
+> Example PUT request JSON data:
+
+```json
+{
+    "is_manager": true,
+    "is_worker": false
+}
+```
+
+> The request returns JSON of the updated Account Role structured like this:
+
+```json
+{
+    "id": "dae7ab83-d6d9-4d83-acdf-e39890a8abe2",
+    "url": "https://gsmtasks.com/api/tasks/roles/dae7ab83-d6d9-4d83-acdf-e39890a8abe2/",
+    "account": "https://gsmtasks.com/api/tasks/accounts/4368ec5d-9942-4c74-90f7-eea752a6e489/",
+    "user": "https://gsmtasks.com/api/tasks/users/18fb9d97-824b-4c2a-9b74-764a88a78c96/",
+    "is_manager": true,
+    "is_worker": false,
+    "created_at": "2016-10-20T12:55:33.977065Z",
+    "updated_at": "2016-10-20T12:55:33.977092Z"
+}
+```
+
+`PUT https://gsmtasks.com/api/tasks/roles/dae7ab83-d6d9-4d83-acdf-e39890a8abe2/`
+
+### Request parameters
+
+Parameter     | Type   | Required | Description
+------------  | ------ | -------  | -----------
+account       | object | No       | URL of the account resource
+user          | object | No       | URL of the user resource
+is_manager    | Boolean| No       | Manager access boolean
+is_worker     | Boolean| No       | Worker access boolean
+
+
+

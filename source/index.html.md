@@ -22,7 +22,16 @@ includes:
   - fileuploads
   - documents
   - signatures
-
+  - clients
+  - task_metadatas
+  - task_forms
+  - task_event_tracks
+  - task_address_features
+  - metafields
+  - notifications
+  - notification_templates
+  - time_locations
+  
 search: true
 ---
 

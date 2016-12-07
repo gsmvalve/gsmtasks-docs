@@ -175,7 +175,7 @@ Request to update a tracker. We will add a task to the tasks array as an example
 }
 ```
 
-> The request returns JSON of the updated Order structured like this:
+> The request returns JSON of the updated Tracker structured like this:
 
 ```json
 {
