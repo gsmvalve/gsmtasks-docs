@@ -79,6 +79,13 @@ Request to create a new document with the parameters provided
     "phone": "+447700900132",
     "email": "tom.smith@fast.uk",
     "notes": "Call 5 minutes before"
+  },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -0.13457340000002205,
+      51.5100974
+    ]
   }
 }
 ```
@@ -100,6 +107,13 @@ Request to create a new document with the parameters provided
     "email": "tom.smith@fast.uk",
     "notes": "All good"
   },
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -0.13457340000002205,
+      51.5100974
+    ]
+  },
   "created_by": "https://gsmtasks.com/api/tasks/users/12d2821e-01e2-48fb-97bc-eaebca93cbdc/",
   "created_at": "2016-10-18T08:34:46.117131Z",
   "updated_at": "2016-10-18T08:34:46.117157Z"
@@ -115,3 +129,4 @@ Attribute         | Required | Type    | Description
 task              | Yes      | String  | URL of the task resource
 file_upload       | Yes      | String  | URL of the file upload object
 signer            | Yes      | Oject   | Signer object
+location          | GeoJSON | Location of the signing event
