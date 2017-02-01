@@ -28,6 +28,13 @@ Returns a array of signatures that the user has access to.
       "email": "tom.smith@fast.uk",
       "notes": "All good"
     },
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -0.13457340000002205,
+        51.5100974
+      ]
+    },
     "created_by": "https://gsmtasks.com/api/tasks/users/12d2821e-01e2-48fb-97bc-eaebca93cbdc/",
     "created_at": "2016-10-18T08:34:46.117131Z",
     "updated_at": "2016-10-18T08:34:46.117157Z"
@@ -47,6 +54,7 @@ task              | String  | URL of the task resource
 file              | String  | URL of the file for downloading
 size              | Number  | Size of the file in bytes
 signer            | Object  | Signer object of the signature
+location          | GeoJSON | Location of the signing event
 created_by        | String  | URL of the user who created the signature
 created_at        | String  | The time when the signature was created
 updated_at        | String  | The time when the signature was updated
