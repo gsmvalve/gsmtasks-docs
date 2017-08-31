@@ -99,8 +99,8 @@ Request to create a new document with the parameters provided
 
 Attribute         | Required | Type    | Description
 ----------------- | -------- | ------- | -----------
-task              | Yes      | String  | URL of the task resource
-order             | Yes      | String  | URL of the order resource
+task              | Yes/No   | String  | URL of the task resource (either task or order is required)
+order             | Yes/No   | String  | URL of the order resource (either task or order is required)
 file_upload       | Yes      | String  | URL of the file upload object
 description       | No       | String  | Description of the file attached
 visible_to_worker | Yes      | Boolean | Defines if the document is visible for worker
