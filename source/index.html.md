@@ -1,6 +1,7 @@
 ---
 title: GSMtasks documentation - API reference
 
+<<<<<<< HEAD
 language_tabs:
   - http
   # - php
@@ -8,6 +9,17 @@ language_tabs:
 
 toc_footers:
   - <a href='https://gsmtasks.com/users/signup/'>Sign Up for a Developer Key</a>
+=======
+language_tabs: # must be one of https://git.io/vQNgJ
+  - shell
+  - ruby
+  - python
+  - javascript
+
+toc_footers:
+  - <a href='#'>Sign Up for a Developer Key</a>
+  - <a href='https://github.com/lord/slate'>Documentation Powered by Slate</a>
+>>>>>>> upstream/master
 
 includes:
   - accounts
@@ -37,7 +49,22 @@ search: true
 
 # Introduction
 
+<<<<<<< HEAD
 The GSMtasks API is a RESTful web service for developers to programmatically interact with GSMtasks data, real-time delivery and task management and route optimization functionality.
+=======
+Welcome to the Kittn API! You can use our API to access Kittn API endpoints, which can get information on various cats, kittens, and breeds in our database.
+
+We have language bindings in Shell, Ruby, and Python! You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
+
+This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
+
+# Authentication
+
+> To authorize, use this code:
+
+```ruby
+require 'kittn'
+>>>>>>> upstream/master
 
 The GSMtasks API is organized around REST. Every bit of data exchanged between clients and the API is JSON over HTTPS. All API requests must be made over HTTPS. Calls made over plain HTTP will fail. You must authenticate for all requests.
 
@@ -98,6 +125,7 @@ The tokens are valid forever, unless refreshed by the user himself.
 
 GSMtasks uses conventional HTTP response codes to indicate success or failure of an API request. In general, codes in the 2xx range indicate success, codes in the 4xx range indicate an error that resulted from the provided information (e.g. a required parameter was missing, a charge failed, etc.), and codes in the 5xx range indicate an error with GSMtasks's servers.
 
+<<<<<<< HEAD
 Status code | Status text       | Description
 ----------- | ----------------- | -----------
 200         | OK                | Everything worked as expected.
@@ -107,3 +135,55 @@ Status code | Status text       | Description
 404         | Not Found         | The requested item doesn't exist.
 429         | Too Many Requests | Too many requests hit the API too quickly.
 50*         | Server Errors     | Something went wrong on our end.
+=======
+## Delete a Specific Kitten
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+api.kittens.delete(2)
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+api.kittens.delete(2)
+```
+
+```shell
+curl "http://example.com/api/kittens/2"
+  -X DELETE
+  -H "Authorization: meowmeowmeow"
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+let max = api.kittens.delete(2);
+```
+
+> The above command returns JSON structured like this:
+
+```json
+{
+  "id": 2,
+  "deleted" : ":("
+}
+```
+
+This endpoint deletes a specific kitten.
+
+### HTTP Request
+
+`DELETE http://example.com/kittens/<ID>`
+
+### URL Parameters
+
+Parameter | Description
+--------- | -----------
+ID | The ID of the kitten to delete
+
+>>>>>>> upstream/master
