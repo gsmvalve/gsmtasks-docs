@@ -44,13 +44,16 @@ updated_at    | String  | The time when the order file upload updated
 
 ## Create a file upload
 
-Request to create a new file with the parameters provided and the base64 encoded file data.
+Request to create a new file with the parameters provided and the base64 encoded file data. Or you can also do a regular multipart/form file upload.
 
-> Example POST request JSON data:
+> Example POST request base64 encoded JSON data:
 
 ```json
 {
-    "file": "https://gsmtasks.com/media/fileupload/d242bb19-d273-4393-84fe-40c2314e558d/Important.jpg",
+    "file": {
+        "name": "file2",
+        "contents": "data:image/gif;base64,iVBORw0KGgoAAA..."
+    },
     "is_image": true
 }
 ```
@@ -79,4 +82,4 @@ Request to create a new file with the parameters provided and the base64 encoded
 Parameter     | Type   | Required | Description
 ------------  | ------ | -------  | -----------
 file          | String | Yes      | URL of the file
-is_image      | Boolean| -        | Defines if the upload is an image
+is_image      | Boolean| -        | Defines if the upload is an image also autodetects

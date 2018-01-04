@@ -18,7 +18,9 @@ Failed      | Task has failed
 Cancelled   | The task has been cancelled
 
 <aside class="notice">
-To configure the Task Events callback please contact [info@gsmtasks.com](mailto:info@gsmtasks.com)
+  To configure the Task Events webhook callbacks please contact <a href="mailto:info@gsmtasks.com">mailto:info@gsmtasks.com</a>.
+  <br/>
+  You can read more about webhooks <a href="#webhooks">here</a>.
 </aside>
 
 ## List Task Events
